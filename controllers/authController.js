@@ -231,8 +231,8 @@ exports.uploadAvatar = async (
       });
     }
 
-    user.avatar =
-      req.file.path;
+    // for avatar
+    user.avatar = `/uploads/avatars/${req.file.filename}`;
 
     await user.save();
 
